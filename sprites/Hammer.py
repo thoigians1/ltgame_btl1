@@ -1,11 +1,11 @@
 import pygame
+import os
 from utils import *
 
-
-class Hammer(pygame.sprite.Sprite):
+class Hammer(pygame.sprite.Sprite): 
     def __init__(self):
         super().__init__()
-        hammer_img = pygame.image.load("data\\hammer\\images\\Smash\\TombStone (2).png")
+        hammer_img = pygame.image.load(os.path.join("data","hammer","images","Smash","TombStone (2).png"))
         self.animate = {
             "smash": {
                 "frames": [

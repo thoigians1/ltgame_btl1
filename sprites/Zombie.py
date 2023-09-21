@@ -1,5 +1,6 @@
 import pygame
 import sys
+import os
 # import time
 
 from utils import *
@@ -12,13 +13,13 @@ class Zombie(pygame.sprite.Sprite):
             "dead": {
                 "image_sheets": [
                     pygame.transform.scale(x, (96, 96))
-                    for x in load_images("data\\zombie\\images\\Dead")
+                    for x in load_images(os.path.join("data","zombie","images","Dead"))
                 ]
             },
             "idle": {
                 "image_sheets": [
                     pygame.transform.scale(x, (96, 96))
-                    for x in load_images("data\\zombie\\images\\Idle")
+                    for x in load_images(os.path.join("data","zombie","images","Idle"))
                 ]
             },
         }

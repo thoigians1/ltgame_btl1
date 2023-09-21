@@ -1,5 +1,6 @@
 import pygame
 import sys
+import os 
 import scenes.export as scenes
 from utils import *
 
@@ -18,7 +19,7 @@ class Game:
         startScene = scenes.StartScene(self.screen, self.gameSceneManager)
         self.gameSceneManager.scenes = {"play": playScene, "start": startScene}
         self.bg = pygame.transform.scale(
-            pygame.image.load("data\\background.png"), (SCREEN_WIDTH, SCREEN_HEIGHT)
+            pygame.image.load(os.path.join("data","background.png")), (SCREEN_WIDTH, SCREEN_HEIGHT)
         )
 
     def run(self):

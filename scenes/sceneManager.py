@@ -1,3 +1,9 @@
+"""
+    This function handle scene 
+    @getScene return name of scene and scene number
+    @setScene change current scene
+    @run start the scene if paused
+"""
 class GameSceneManager:
     def __init__(self, currentScene, scenes):
         self.currentScene = currentScene

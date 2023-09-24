@@ -1,10 +1,17 @@
 import pygame
-import sys
 import os
 # import time
 
 from utils import *
 
+"""
+    This file handle Zombie interaction within the game
+    @idle handle idle animation
+    @idle_time: set idle time
+    @dead handle dead animation
+    @hide hide sprite from scene
+    @update: update sprite according to state
+"""
 
 class Zombie(pygame.sprite.Sprite):
     def __init__(self, pos_x, pos_y):
@@ -23,7 +30,7 @@ class Zombie(pygame.sprite.Sprite):
                 ]
             },
         }
-        self.state = "hide"
+        self.state = "hide" # Zombie has 3 state: Hide, Idle, Dead
         self.current_sheet = 0
         self.image = pygame.Surface((0, 0))
         self.rect = self.image.get_rect()

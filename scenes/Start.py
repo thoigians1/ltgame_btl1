@@ -7,6 +7,12 @@ from utils import *
 from numpy import random
 import numpy as np
 
+"""
+    This file drawa start scene, place zombies, init sprite groups, start scene event, mouse event,...
+    @start: init places for Zombies to appear, init sprite groups for zombies and hammer
+    @run: start zombie state, handle event: Quit, PlayerSmash, zombieDead, display score
+"""
+
 pygame.init()
 pygame.font.init()
 font = pygame.font.SysFont(None, 30)
@@ -56,13 +62,14 @@ class StartScene:
         if pygame.time.get_ticks() - self.startTime >= 1000:
             arr = np.array([0, 1, 2, 3, 4, 5])
             arr = random.permutation(arr)
+
             for i in arr:
                 if self.all_zombie.sprites()[i].state == "hide":
                     self.all_zombie.sprites()[i].idle()
                     self.all_zombie.sprites()[i].idle_time(pygame.time.get_ticks())
-
                     break
             self.startTime = pygame.time.get_ticks()
+
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 pygame.quit()
@@ -76,7 +83,7 @@ class StartScene:
                     zombie.dead()
                     self.score += 1
 
-         # Render the score text
+        # Render the score text
         score_text = font.render(f"Score: {self.score}", True, (255, 255, 255))
 
         # Draw the score onto the screen

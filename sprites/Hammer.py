@@ -1,7 +1,11 @@
 import pygame
 import os
 from utils import *
-
+"""
+    This file handle Hammer interaction within the game
+    @smash function: draw smashing animation on screen 
+    @update place Hammer sprite at mouse point, start @smash function if changed state
+"""
 class Hammer(pygame.sprite.Sprite): 
     def __init__(self):
         super().__init__()
